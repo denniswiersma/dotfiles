@@ -91,4 +91,6 @@ return require('packer').startup(function(use)
     use 'numToStr/Comment.nvim'
 
     use "lewis6991/gitsigns.nvim"
+
+    use "HiPhish/rainbow-delimiters.nvim"
 end)
