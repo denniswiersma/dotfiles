@@ -95,4 +95,6 @@ return require('packer').startup(function(use)
     use "HiPhish/rainbow-delimiters.nvim"
 
     use 'andweeb/presence.nvim'
+
+    use 'mhartington/formatter.nvim'
 end)

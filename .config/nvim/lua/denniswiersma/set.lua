@@ -31,7 +31,7 @@ vim.opt.colorcolumn = "80"
 -- auto format on write
 vim.cmd [[augroup Format]]
 vim.cmd [[autocmd! * <buffer>]]
-vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
+vim.cmd [[autocmd BufWritePost * FormatWrite]]
 vim.cmd [[augroup END]]
 
 -- set diagnostics icons
