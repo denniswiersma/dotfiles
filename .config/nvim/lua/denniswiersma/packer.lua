@@ -93,4 +93,6 @@ return require('packer').startup(function(use)
     use "lewis6991/gitsigns.nvim"
 
     use "HiPhish/rainbow-delimiters.nvim"
+
+    use 'andweeb/presence.nvim'
 end)

@@ -1,3 +1,11 @@
+require("harpoon").setup({
+    global_settings = {
+        tabline = true,
+        tabline_prefix = "   ",
+        tabline_suffix = "   ",
+    }
+})
+
 local mark = require("harpoon.mark")
 local ui = require("harpoon.ui")
 
