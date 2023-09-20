@@ -160,6 +160,16 @@ _G.packer_plugins = {
     path = "/Users/denniswiersma/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
+  ["nvim-code-action-menu"] = {
+    loaded = true,
+    path = "/Users/denniswiersma/.local/share/nvim/site/pack/packer/start/nvim-code-action-menu",
+    url = "https://github.com/weilbith/nvim-code-action-menu"
+  },
+  ["nvim-lightbulb"] = {
+    loaded = true,
+    path = "/Users/denniswiersma/.local/share/nvim/site/pack/packer/start/nvim-lightbulb",
+    url = "https://github.com/kosayoda/nvim-lightbulb"
+  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/Users/denniswiersma/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",

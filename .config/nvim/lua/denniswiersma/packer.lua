@@ -100,4 +100,6 @@ return require("packer").startup(function(use)
 	use({ "folke/todo-comments.nvim", requires = {
 		"nvim-lua/plenary.nvim",
 	} })
+
+	use("weilbith/nvim-code-action-menu")
 end)
