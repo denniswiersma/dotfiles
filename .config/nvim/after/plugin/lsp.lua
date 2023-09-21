@@ -16,6 +16,18 @@ lspc.ltex.setup({
 	},
 })
 
+lspc.pylsp.setup({
+	settings = {
+		pylsp = {
+			plugins = {
+				pycodestyle = {
+					maxLineLength = 80,
+				},
+			},
+		},
+	},
+})
+
 local lsp = require("lsp-zero")
 
 lsp.preset("recommended")
