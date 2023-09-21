@@ -1,3 +1,21 @@
+-- specifig lsp settings
+local lspc = require("lspconfig")
+
+lspc.grammarly.setup({
+	filetypes = { "markdown", "tex" },
+})
+
+lspc.ltex.setup({
+	settings = {
+		ltex = {
+			language = "en-GB",
+			additionalRules = {
+				languageModel = "~/ngram/",
+			},
+		},
+	},
+})
+
 local lsp = require("lsp-zero")
 
 lsp.preset("recommended")
@@ -17,23 +35,6 @@ lsp.ensure_installed({
 
 -- Fix Undefined global 'vim'
 lsp.nvim_workspace()
-
-local lspc = require("lspconfig")
-
-lspc.grammarly.setup({
-	filetypes = { "markdown", "tex" },
-})
-
-lspc.ltex.setup({
-	settings = {
-		ltex = {
-			language = "en-GB",
-			additionalRules = {
-				languageModel = "~/ngram/",
-			},
-		},
-	},
-})
 
 local cmp = require("cmp")
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
