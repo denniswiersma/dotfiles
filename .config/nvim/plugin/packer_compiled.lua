@@ -84,6 +84,11 @@ _G.packer_plugins = {
     path = "/Users/denniswiersma/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["Nvim-R"] = {
+    loaded = true,
+    path = "/Users/denniswiersma/.local/share/nvim/site/pack/packer/start/Nvim-R",
+    url = "https://github.com/jalvesaq/Nvim-R"
+  },
   ["alpha-nvim"] = {
     loaded = true,
     path = "/Users/denniswiersma/.local/share/nvim/site/pack/packer/start/alpha-nvim",
@@ -164,11 +169,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/denniswiersma/.local/share/nvim/site/pack/packer/start/nvim-code-action-menu",
     url = "https://github.com/weilbith/nvim-code-action-menu"
-  },
-  ["nvim-lightbulb"] = {
-    loaded = true,
-    path = "/Users/denniswiersma/.local/share/nvim/site/pack/packer/start/nvim-lightbulb",
-    url = "https://github.com/kosayoda/nvim-lightbulb"
   },
   ["nvim-lspconfig"] = {
     loaded = true,

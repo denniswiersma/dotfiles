@@ -102,4 +102,6 @@ return require("packer").startup(function(use)
 	} })
 
 	use("weilbith/nvim-code-action-menu")
+
+	use("jalvesaq/Nvim-R")
 end)
