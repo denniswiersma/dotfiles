@@ -11,6 +11,7 @@ alias ls='ls --color'
 # Bioinf
 alias sshbioinf='ssh -p 4235 dwiersma@bioinf.nl'
 alias cdbioinf='cd /Users/denniswiersma/Library/Mobile\ Documents/com~apple~CloudDocs/Documents/School/Bioinformatica'
+alias int='cd /Users/denniswiersma/Library/Mobile\ Documents/com~apple~CloudDocs/Documents/School/Bioinformatica/internship'
 alias dbtunnelbioinf='ssh -N -L 3306:webprojectsdb.bin.bioinf.nl:3306 dwiersma@bioinf.nl -p 4235'
 
 # VPS server
@@ -34,15 +35,15 @@ export PATH=$PATH:$HOME/clustalo
 export PATH=$PATH:$HOME/LIB/sratoolkit.3.0.1-mac64/bin
 
 # set and change java version - setjdk([version number]) #
-function setjdk() {  
-  if [ $# -ne 0 ]; then  
-    removeFromPath '/System/Library/Frameworks/JavaVM.framework/Home/bin'  
-    if [ -n "${JAVA_HOME+x}" ]; then  
-      removeFromPath $JAVA_HOME  
-    fi  
-    export JAVA_HOME=`/usr/libexec/java_home -v $@`  
-    export PATH=$JAVA_HOME/bin:$PATH  
-  fi  
+function setjdk() {
+  if [ $# -ne 0 ]; then
+    removeFromPath '/System/Library/Frameworks/JavaVM.framework/Home/bin'
+    if [ -n "${JAVA_HOME+x}" ]; then
+      removeFromPath $JAVA_HOME
+    fi
+    export JAVA_HOME=`/usr/libexec/java_home -v $@`
+    export PATH=$JAVA_HOME/bin:$PATH
+  fi
 }
 
 removeFromPath () {
