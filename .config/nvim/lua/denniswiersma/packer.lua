@@ -104,4 +104,9 @@ return require("packer").startup(function(use)
 	use("weilbith/nvim-code-action-menu")
 
 	use("jalvesaq/Nvim-R")
+
+	use({
+		"kkoomen/vim-doge",
+		run = ":call doge#install()",
+	})
 end)

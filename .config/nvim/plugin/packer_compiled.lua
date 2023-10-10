@@ -235,6 +235,11 @@ _G.packer_plugins = {
     path = "/Users/denniswiersma/.local/share/nvim/site/pack/packer/start/undotree",
     url = "https://github.com/mbbill/undotree"
   },
+  ["vim-doge"] = {
+    loaded = true,
+    path = "/Users/denniswiersma/.local/share/nvim/site/pack/packer/start/vim-doge",
+    url = "https://github.com/kkoomen/vim-doge"
+  },
   ["vim-fugitive"] = {
     loaded = true,
     path = "/Users/denniswiersma/.local/share/nvim/site/pack/packer/start/vim-fugitive",
