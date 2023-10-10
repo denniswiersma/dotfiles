@@ -1,9 +1,9 @@
 -- specifig lsp settings
 local lspc = require("lspconfig")
 
-lspc.grammarly.setup({
-	filetypes = { "markdown", "tex" },
-})
+-- lspc.grammarly.setup({
+-- 	filetypes = { "markdown", "tex" },
+-- })
 
 lspc.ltex.setup({
 	settings = {
