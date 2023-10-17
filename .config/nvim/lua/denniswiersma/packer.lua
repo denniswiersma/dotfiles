@@ -109,4 +109,5 @@ return require("packer").startup(function(use)
 		"kkoomen/vim-doge",
 		run = ":call doge#install()",
 	})
+	use("github/copilot.vim")
 end)
