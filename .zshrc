@@ -1,5 +1,20 @@
 # Set shell promt styling
-PROMPT="%F{134}%n%f@%F{35}%m%f:%F{8}%3~%f%F{26}$%f"
+function parse_git_branch() {
+    local branch=""
+    branch=$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')
+    if [ -n "$branch" ]; then
+        echo "%f%F{217}$branch"
+    fi
+}
+
+function update_prompt() {
+    local git_branch
+    git_branch=$(parse_git_branch)
+
+    PROMPT="%F{134}%n%f@%F{35}%m%f:%F{8}%2~ $(parse_git_branch)%f%F{26}$%f"
+}
+precmd_functions+=(update_prompt)
+update_prompt
 
 # Load cattppuccin highlighting
 source ~/.zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
