@@ -42,6 +42,10 @@ alias cdicloud='cd /Users/denniswiersma/Library/Mobile\ Documents/com~apple~Clou
 alias zshrc='nvim $HOME/.zshrc'
 alias preview='open -a Preview'
 
+# sleep laptop when lid is closed
+alias lidsleepf='sudo pmset -b sleep 0; sudo pmset -b disablesleep 1'
+alias lidsleept='sudo pmset -b sleep 5; sudo pmset -b disablesleep 0'
+
 alias clustalo='/Users/denniswiersma/clustalo'
 alias mambayml='mamba env export --from-history | grep -v "^prefix: " > environment.yml'
 # END ALIASES #
