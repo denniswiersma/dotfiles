@@ -21,7 +21,7 @@ source ~/.zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Improve autocomplete
-autoload -Uz compinit && compinit
+autoload -Uz compinit && compinit -u
 
 # ALIASES #
 # ls aliases
