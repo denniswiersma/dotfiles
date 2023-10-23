@@ -31,6 +31,7 @@ alias sshbioinf='ssh -p 4235 dwiersma@bioinf.nl'
 alias cdbioinf='cd /Users/denniswiersma/Library/Mobile\ Documents/com~apple~CloudDocs/Documents/School/Bioinformatica'
 alias int='cd /Users/denniswiersma/Library/Mobile\ Documents/com~apple~CloudDocs/Documents/School/Bioinformatica/internship'
 alias dbtunnelbioinf='ssh -N -L 3306:webprojectsdb.bin.bioinf.nl:3306 dwiersma@bioinf.nl -p 4235'
+alias jnt='ssh -L 8392:localhost:8888 dwiersma@bioinf.nl'
 
 # VPS server
 alias sshvps='ssh dennis@denniswiersma.com'
