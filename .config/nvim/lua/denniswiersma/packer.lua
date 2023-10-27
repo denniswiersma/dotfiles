@@ -114,4 +114,14 @@ return require("packer").startup(function(use)
 		run = ":call doge#install()",
 	})
 	use("github/copilot.vim")
+
+	use({
+		"j-hui/fidget.nvim",
+		tag = "legacy",
+		config = function()
+			require("fidget").setup({
+				-- options
+			})
+		end,
+	})
 end)

@@ -16,17 +16,17 @@ lspc.ltex.setup({
 	},
 })
 
-lspc.pylsp.setup({
-	settings = {
-		pylsp = {
-			plugins = {
-				pycodestyle = {
-					maxLineLength = 80,
-				},
-			},
-		},
-	},
-})
+-- lspc.pylsp.setup({
+-- 	settings = {
+-- 		pylsp = {
+-- 			plugins = {
+-- 				pycodestyle = {
+-- 					maxLineLength = 80,
+-- 				},
+-- 			},
+-- 		},
+-- 	},
+-- })
 
 local lsp = require("lsp-zero")
 
@@ -38,7 +38,7 @@ lsp.ensure_installed({
 	"dockerls",
 	"html",
 	"ltex",
-	"pylsp",
+	-- "pylsp",
 	"r_language_server",
 	"sqlls",
 	"eslint",
