@@ -150,6 +150,11 @@ _G.packer_plugins = {
     path = "/Users/denniswiersma/.local/share/nvim/site/pack/packer/start/inc-rename.nvim",
     url = "https://github.com/smjonas/inc-rename.nvim"
   },
+  ["indent-blankline.nvim"] = {
+    loaded = true,
+    path = "/Users/denniswiersma/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
+    url = "https://github.com/lukas-reineke/indent-blankline.nvim"
+  },
   ["leap.nvim"] = {
     loaded = true,
     path = "/Users/denniswiersma/.local/share/nvim/site/pack/packer/start/leap.nvim",
