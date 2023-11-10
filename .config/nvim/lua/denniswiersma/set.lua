@@ -29,14 +29,14 @@ vim.opt.updatetime = 50
 vim.opt.colorcolumn = "80"
 
 -- auto format on write
-vim.cmd [[augroup Format]]
-vim.cmd [[autocmd! * <buffer>]]
-vim.cmd [[autocmd BufWritePost * FormatWrite]]
-vim.cmd [[augroup END]]
+vim.cmd([[augroup Format]])
+vim.cmd([[autocmd! * <buffer>]])
+vim.cmd([[autocmd BufWritePost * FormatWrite]])
+vim.cmd([[augroup END]])
 
 -- set diagnostics icons
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 for type, icon in pairs(signs) do
-    local hl = "DiagnosticSign" .. type
-    vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+	local hl = "DiagnosticSign" .. type
+	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
