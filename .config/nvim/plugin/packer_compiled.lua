@@ -160,6 +160,11 @@ _G.packer_plugins = {
     path = "/Users/denniswiersma/.local/share/nvim/site/pack/packer/start/leap.nvim",
     url = "https://github.com/ggandor/leap.nvim"
   },
+  ["lsp-lens.nvim"] = {
+    loaded = true,
+    path = "/Users/denniswiersma/.local/share/nvim/site/pack/packer/start/lsp-lens.nvim",
+    url = "https://github.com/VidocqH/lsp-lens.nvim"
+  },
   ["lsp-zero.nvim"] = {
     loaded = true,
     path = "/Users/denniswiersma/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
