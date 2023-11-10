@@ -8,3 +8,5 @@
     autoSetupRemote = true
 [core]
     editor = nvim
+[pull]
+	rebase = false
