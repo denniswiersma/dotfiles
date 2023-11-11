@@ -1,33 +1,4 @@
 -- specifig lsp settings
-local lspc = require("lspconfig")
-
--- lspc.grammarly.setup({
--- 	filetypes = { "markdown", "tex" },
--- })
-
-lspc.ltex.setup({
-	settings = {
-		ltex = {
-			language = "en-GB",
-			additionalRules = {
-				languageModel = "~/ngram/",
-			},
-		},
-	},
-})
-
--- lspc.pylsp.setup({
--- 	settings = {
--- 		pylsp = {
--- 			plugins = {
--- 				pycodestyle = {
--- 					maxLineLength = 80,
--- 				},
--- 			},
--- 		},
--- 	},
--- })
-
 local lsp = require("lsp-zero")
 
 lsp.preset("recommended")
@@ -38,7 +9,7 @@ lsp.ensure_installed({
 	"dockerls",
 	"html",
 	"ltex",
-	-- "pylsp",
+	"pyright",
 	"r_language_server",
 	"sqlls",
 	"eslint",
