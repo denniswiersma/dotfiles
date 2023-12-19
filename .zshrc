@@ -1,44 +1,27 @@
-# Set shell promt styling
-function parse_git_branch() {
-    local branch=""
-    branch=$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')
-    if [ -n "$branch" ]; then
-        echo "%f%F{217}$branch"
-    fi
-}
-
-function update_prompt() {
-    local git_branch
-    git_branch=$(parse_git_branch)
-
-    PROMPT="%F{134}%n%f@%F{35}%m%f:%F{8}%2~ $(parse_git_branch)%f%F{26}$%f"
-}
-precmd_functions+=(update_prompt)
-update_prompt
-
-# Load cattppuccin highlighting
+# Load zsh-syntax-highlighting
 source ~/.zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Improve autocomplete
+fpath+=~/.zfunc
 autoload -Uz compinit && compinit -u
 
 # ALIASES #
-# ls aliases
-alias ls='ls --color'
-# Bioinf
-alias sshbioinf='ssh -p 4235 dwiersma@bioinf.nl'
-alias cdbioinf='cd /Users/denniswiersma/Library/Mobile\ Documents/com~apple~CloudDocs/Documents/School/Bioinformatica'
-alias int='cd /Users/denniswiersma/Library/Mobile\ Documents/com~apple~CloudDocs/Documents/School/Bioinformatica/internship'
+alias ls='lsd'
+alias grep='rg'
+alias cat='bat'
+alias du='dust'
+alias hf='hyperfine'
+
+
+
 alias dbtunnelbioinf='ssh -N -L 3306:webprojectsdb.bin.bioinf.nl:3306 dwiersma@bioinf.nl -p 4235'
 alias jnt='ssh -L 8392:localhost:8888 dwiersma@bioinf.nl'
 
-# VPS server
-alias sshvps='ssh dennis@denniswiersma.com'
-
-# cd aliases
-alias cdhome='cd $HOME'
-alias cdicloud='cd /Users/denniswiersma/Library/Mobile\ Documents/com~apple~CloudDocs/Documents'
+alias home='cd $HOME'
+alias icloud='cd /Users/denniswiersma/Library/Mobile\ Documents/com~apple~CloudDocs/Documents'
+alias bioinf='cd /Users/denniswiersma/Library/Mobile\ Documents/com~apple~CloudDocs/Documents/School/Bioinformatica'
+alias int='cd /Users/denniswiersma/Library/Mobile\ Documents/com~apple~CloudDocs/Documents/School/Bioinformatica/internship'
 
 alias zshrc='nvim $HOME/.zshrc'
 alias preview='open -a Preview'
@@ -47,14 +30,11 @@ alias preview='open -a Preview'
 alias lidsleepf='sudo pmset -b sleep 0; sudo pmset -b disablesleep 1'
 alias lidsleept='sudo pmset -b sleep 5; sudo pmset -b disablesleep 0'
 
-alias clustalo='/Users/denniswiersma/clustalo'
 alias mambayml='mamba env export --from-history | grep -v "^prefix: " > environment.yml'
 # END ALIASES #
 
 # Set paths
-export PATH=$PATH:/Users/denniswiersma/miniconda3/bin/hisat2
 export PATH=$PATH:/Users/denniswiersma/LIB/flutter/bin
-export PATH=$PATH:$HOME/clustalo
 export PATH=$PATH:$HOME/LIB/sratoolkit.3.0.1-mac64/bin
 
 # set and change java version - setjdk([version number]) #
@@ -96,3 +76,9 @@ fi
 source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
 source /opt/homebrew/opt/chruby/share/chruby/auto.sh
 chruby ruby-3.1.3 # run chruby to see actual version
+
+# Created by `pipx` on 2023-11-16 14:44:07
+export PATH="$PATH:/Users/denniswiersma/.local/bin"
+
+
+eval "$(starship init zsh)"
