@@ -135,4 +135,6 @@ return require("packer").startup(function(use)
 	use("lukas-reineke/indent-blankline.nvim")
 
 	use("VidocqH/lsp-lens.nvim")
+
+	use("fei6409/log-highlight.nvim")
 end)
