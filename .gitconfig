@@ -1,6 +1,7 @@
 [user]
-	name = denniswiersma
-	email = dennis.wiersma@icloud.com
+	name = Dennis Wiersma
+	email = hello@denniswiersma.com
+	signingkey = 2D06F96D37AB35B0B2896E63951871DAFEABDBE4!
 [alias]
 	duw = push
 	lgb = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset%n' --abbrev-commit --date=relative --branches
@@ -10,3 +11,7 @@
     editor = nvim
 [pull]
 	rebase = false
+[commit]
+	gpgsign = true
+[gpg]
+	program = /opt/homebrew/bin/gpg
