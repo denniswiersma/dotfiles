@@ -1,3 +1,6 @@
+# Export PATH
+export PATH=/usr/local/bin:$PATH
+
 # Load zsh-syntax-highlighting
 source ~/.zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -6,25 +9,31 @@ source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fpath+=~/.zfunc
 autoload -Uz compinit && compinit -u
 
-# ALIASES #
+# Setup for GPG signing and SSH
+export "GPG_TTY=$(tty)"
+export "SSH_AUTH_SOCK=${HOME}/.gnupg/S.gpg-agent.ssh"
+gpgconf --launch gpg-agent
+
+# cli tools ALIASES #
 alias ls='lsd'
 alias grep='rg'
 alias cat='bat'
 alias du='dust'
 alias hf='hyperfine'
+alias preview='open -a Preview'
 
-
-
-alias dbtunnelbioinf='ssh -N -L 3306:webprojectsdb.bin.bioinf.nl:3306 dwiersma@bioinf.nl -p 4235'
-alias jnt='ssh -L 8392:localhost:8888 dwiersma@bioinf.nl'
-
+# location ALIASES #
 alias home='cd $HOME'
 alias icloud='cd /Users/denniswiersma/Library/Mobile\ Documents/com~apple~CloudDocs/Documents'
+alias pd="cd /Users/denniswiersma/Library/CloudStorage/ProtonDrive-denniswiersma@protonmail.com"
 alias bioinf='cd /Users/denniswiersma/Library/Mobile\ Documents/com~apple~CloudDocs/Documents/School/Bioinformatica'
 alias int='cd /Users/denniswiersma/Library/Mobile\ Documents/com~apple~CloudDocs/Documents/School/Bioinformatica/internship'
-
 alias zshrc='nvim $HOME/.zshrc'
-alias preview='open -a Preview'
+
+# SSH ALIASES #
+alias dbtunnelbioinf='ssh -N -L 3306:webprojectsdb.bin.bioinf.nl:3306 dwiersma@bioinf.nl -p 4235'
+alias jnt='ssh -L 8392:127.0.0.1:8888 dwiersma@bioinf.nl'
+
 
 # sleep laptop when lid is closed
 alias lidsleepf='sudo pmset -b sleep 0; sudo pmset -b disablesleep 1'
@@ -53,6 +62,18 @@ removeFromPath () {
     export PATH=$(echo $PATH | sed -E -e "s;:$1;;" -e "s;$1:?;;")
 }
 # end set java version #
+
+
+# reset gpg card
+resetcard() {
+  rm -r ~/.gnupg/private-keys-v1.d
+  gpgconf --kill gpg-agent
+  gpg --card-status
+}
+
+resetgpg() {
+    gpg-connect-agent updatestartuptty /bye
+}
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
