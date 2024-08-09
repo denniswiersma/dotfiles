@@ -10,7 +10,7 @@ local clients_lsp = function()
 	for _, client in pairs(clients) do
 		table.insert(c, client.name)
 	end
-	return "\u{f085} " .. table.concat(c, "|")
+	return " \u{f085} " .. table.concat(c, " | ")
 end
 
 require("lualine").setup({
