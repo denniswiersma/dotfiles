@@ -137,4 +137,8 @@ return require("packer").startup(function(use)
 	use("VidocqH/lsp-lens.nvim")
 
 	use("fei6409/log-highlight.nvim")
+
+	use({ "chipsenkbeil/distant.nvim", branch = "v0.3" })
+
+	use("lewis6991/satellite.nvim")
 end)
