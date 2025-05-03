@@ -12,6 +12,6 @@
 [pull]
 	rebase = false
 [commit]
-	gpgsign = true
+	gpgsign = false
 [gpg]
 	program = /opt/homebrew/bin/gpg
