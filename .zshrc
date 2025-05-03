@@ -45,6 +45,7 @@ alias mambayml='mamba env export --from-history | grep -v "^prefix: " > environm
 # Set paths
 export PATH=$PATH:/Users/denniswiersma/LIB/flutter/bin
 export PATH=$PATH:$HOME/LIB/sratoolkit.3.0.1-mac64/bin
+export PATH="$PATH":"$HOME/.pub-cache/bin"
 
 # set and change java version - setjdk([version number]) #
 function setjdk() {
