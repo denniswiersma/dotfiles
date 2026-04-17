@@ -41,8 +41,20 @@ for type, icon in pairs(signs) do
 	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
 
+-- vim.api.nvim_create_autocmd("VimEnter", {
+-- 	pattern = "*",
+-- 	callback = function()
+-- 		-- Check if Neovim was started with a file or not.
+-- 		if #vim.v.argv == 1 then
+-- 			-- If no file was provided, open Neotree.
+-- 			vim.cmd("Neotree position=current")
+-- 		end
+-- 		-- If a file was provided, Neovim opens it by default, so no need to do anything.
+-- 	end,
+-- })
+
 -- enter neotree on startup
-vim.api.nvim_create_autocmd("VimEnter", {
-	pattern = "*",
-	command = "Neotree position=current",
-})
+-- vim.api.nvim_create_autocmd("VimEnter", {
+-- 	pattern = "*",
+-- 	command = "Neotree position=current",
+-- })

@@ -32,6 +32,10 @@ lsp.configure("rust_analyzer", {
 	},
 })
 
+-- lsp.configure("ltex", {
+-- 	filtypes = { "tex", "bib" },
+-- })
+
 -- Fix Undefined global 'vim'
 lsp.nvim_workspace()
 
@@ -61,7 +65,15 @@ lsp.set_preferences({
 	},
 })
 
+local navbuddy = require("nvim-navbuddy")
+
 lsp.on_attach(function(client, bufnr)
+	-- Disable ltex for markdown files
+	if client.name == "ltex" and vim.bo[bufnr].filetype == "markdown" then
+		client.stop()
+		return
+	end
+
 	local opts = { buffer = bufnr, remap = false }
 
 	vim.keymap.set("n", "gd", function()
@@ -94,6 +106,8 @@ lsp.on_attach(function(client, bufnr)
 	vim.keymap.set("i", "<C-h>", function()
 		vim.lsp.buf.signature_help()
 	end, opts)
+
+	navbuddy.attach(client, bufnr)
 end)
 
 lsp.setup()

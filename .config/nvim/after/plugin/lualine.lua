@@ -13,6 +13,16 @@ local clients_lsp = function()
 	return " \u{f085} " .. table.concat(c, " | ")
 end
 
+-- Function to get the last modified time
+local last_write_time = function()
+	local filepath = vim.fn.expand("%:p")
+	if vim.fn.filereadable(filepath) == 1 then
+		return os.date("%Y-%m-%d %H:%M:%S", vim.fn.getftime(filepath))
+	else
+		return ""
+	end
+end
+
 require("lualine").setup({
 	options = {
 		icons_enabled = true,
@@ -42,7 +52,7 @@ require("lualine").setup({
 				symbols = { error = " ", warn = " ", info = " ", hint = " " },
 			},
 		},
-		lualine_c = { "filename", "filesize" },
+		lualine_c = { "filename", "filesize", last_write_time },
 		lualine_x = { clients_lsp, "filetype" },
 		lualine_y = { "progress" },
 		lualine_z = { "location" },

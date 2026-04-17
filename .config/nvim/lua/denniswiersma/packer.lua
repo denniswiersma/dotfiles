@@ -14,7 +14,6 @@ return require("packer").startup(function(use)
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
 
-	use("ThePrimeagen/git-worktree.nvim")
 	use("nvim-lua/popup.nvim")
 	use("nvim-telescope/telescope-fzf-native.nvim", { run = "make" })
 
@@ -115,11 +114,6 @@ return require("packer").startup(function(use)
 	})
 	use("github/copilot.vim")
 
-	use({
-		"j-hui/fidget.nvim",
-		tag = "legacy",
-	})
-
 	use("ray-x/lsp_signature.nvim")
 
 	use({
@@ -138,7 +132,20 @@ return require("packer").startup(function(use)
 
 	use("fei6409/log-highlight.nvim")
 
-	use({ "chipsenkbeil/distant.nvim", branch = "v0.3" })
-
 	use("lewis6991/satellite.nvim")
+
+	use("Pocco81/true-zen.nvim")
+
+	use({
+		"SmiteshP/nvim-navbuddy",
+		requires = {
+			"neovim/nvim-lspconfig",
+			"SmiteshP/nvim-navic",
+			"MunifTanjim/nui.nvim",
+			"numToStr/Comment.nvim", -- Optional
+			"nvim-telescope/telescope.nvim", -- Optional
+		},
+	})
+
+	use({ "snakemake/snakemake", rtp = "misc/vim", ft = "snakemake" })
 end)
